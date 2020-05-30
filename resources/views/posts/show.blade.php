@@ -3,14 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-8">
+        <div class="col-6">
             <img 
                 src="/storage/{{ $post->image }}" 
                 class="w-100"
                 alt=""
             />
         </div>
-        <div class="col-4">
+        <div class="col-6">
             <div>
                 <div class="d-flex align-items-center">
                     <div class="pr-3">
@@ -38,7 +38,9 @@
                         <a href="/profile/{{ $post->user->id }}">
                             <span class="text-dark">{{ $post->user->username }}</span>
                         </a>
-                    </span>{{ $post->caption }}
+                    </span>
+                    <br />
+                    {{ $post->caption }}
                 </p>
             </div>
         </div>

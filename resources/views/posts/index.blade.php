@@ -24,12 +24,18 @@
                     <a href="/profile/{{ $post->user->id }}">
                         <span class="text-dark">{{ $post->user->username }}</span>
                     </a>
-                </span>{{ $post->caption }}
+                </span>&nbsp;{{ $post->caption }}
             </p>
             </div>
         </div>
     </div>
 
    @endforeach
+
+   <div class="row">
+       <div class="col-12 d-flex justify-content-center">
+           {{ $posts->links() }}
+       </div>
+   </div>
 </div>
 @endsection
