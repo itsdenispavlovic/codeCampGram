@@ -5,15 +5,17 @@
     <div class="row">
         <div class="col-3 p-5">
             <img 
-                src="https://instagram.fbeg4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/81629666_599233980897961_3720436160833519616_n.jpg?_nc_ht=instagram.fbeg4-1.fna.fbcdn.net&_nc_ohc=l7VTkALd70UAX-nKjV1&oh=8ef2f5e4a81ab5c0f5f6db8b54556f83&oe=5EFAD7AC" 
+                src="/storage/{{ $user->profile->image }}" 
                 alt=""
-                class="rounded-circle"
+                class="rounded-circle w-100"
             />
         </div>
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <a href="/p/create">Add New Posts</a>
+                @can('update', $user->profile)
+                    <a href="/p/create">Add New Posts</a>
+                @endcan
             </div>
             @can('update', $user->profile)
                 <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
